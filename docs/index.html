@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to SofaPython3 ! &mdash; SofaPython3 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Download and Install" href="menu/install.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> SofaPython3
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="menu/install.html">Download and Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/SofaPlugin.html">Using the plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/SofaModule.html">The modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/pythonLibraries.html">Additionnal libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/CustomModule.html">Writing custom binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/Contributing.html">Contributing</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">SofaPython3</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Welcome to SofaPython3 !</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-sofapython3">
+<h1>Welcome to SofaPython3 !<a class="headerlink" href="#welcome-to-sofapython3" title="Permalink to this headline">¶</a></h1>
+<p>The project is python3 binding for the Sofa simulation framework.
+It is composed of one <em>Sofa plugin</em> and several <em>python modules</em>.</p>
+<p><em>Sofa plugin</em> embeds a python3 interpreter and a scene loader. This plugins allows you to load
+a python interpreter in a sofa simulation to write Sofa scene directly using python. It also
+permits to implement in python3 custom sofa component like ForceField, Controllers, Visitors.</p>
+<p>Apart from the SofaPython3 plugin we also provide several <em>python modules</em> that exposes python different
+parts of Sofa.</p>
+<p>The general guidelines design for these binding was to be as much as possible idiomatic python3 API
+and with tight integration for numpy.</p>
+<div class="section" id="general-overview">
+<h2>General overview<a class="headerlink" href="#general-overview" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-sofa-python-module">
+<h3>The Sofa python module:<a class="headerlink" href="#the-sofa-python-module" title="Permalink to this headline">¶</a></h3>
+<p>Exposes the base Sofa object to build and manipulate a Sofa simulation.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>contains 4 submodules :</dt>
+<dd><ul class="first last">
+<li>Sofa.Core, that contains bindings for scene components,</li>
+<li>Sofa.Simulation, that contains functions to conduct simulation,</li>
+<li>Sofa.Types, that contains default types available in Sofa,</li>
+<li>Sofa.Helper, that contains utility functions.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>provides a copy-less API to access the sofa Data containers</li>
+<li>allows to implement custom sofa object (ForceField,  Controller) in python</li>
+<li>has docstring documentation</li>
+</ul>
+<p>Try it: <code class="docutils literal notranslate"><span class="pre">`python</span> <span class="pre">import</span> <span class="pre">Sofa`</span></code></p>
+</div>
+<div class="section" id="the-sofaruntime-python-module">
+<h3>The SofaRuntime python module<a class="headerlink" href="#the-sofaruntime-python-module" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>access the runtime specific stuff (GUI, GLViewers, runSofa internal status) [POC]</li>
+<li>docstring with sphinx content [TBD]</li>
+</ul>
+<p>Try it: <code class="docutils literal notranslate"><span class="pre">`python</span> <span class="pre">import</span> <span class="pre">SofaRuntime`</span></code></p>
+</div>
+<div class="section" id="developer-s-environment">
+<h3>Developer’s environment<a class="headerlink" href="#developer-s-environment" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>autogenerated documentation using sphinx [DONE]</li>
+<li>automated update the docs from the c++’s docstring: <a class="reference external" href="https://sofapython3.readthedocs.io/en/latest/">https://sofapython3.readthedocs.io/en/latest/</a> [WIP]</li>
+<li>code completion with common editor [WIP, some editor are not working with c++ modules]</li>
+</ul>
+</div>
+<div class="section" id="execution-environment">
+<h3>Execution environment<a class="headerlink" href="#execution-environment" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>SofaPython3 is a plugin to include a python3 environment in a Sofa scene [DONE],</li>
+</ul>
+<p>Try it: <code class="docutils literal notranslate"><span class="pre">`xml</span> <span class="pre">&lt;RequiredPlugin='SofaPython3'/&gt;`</span></code></p>
+<ul class="simple">
+<li>Sofa and SofaRuntime are the python module that can be imported in any python interpreter (python3, ipython, jupyter)[DONE],</li>
+</ul>
+<p>Try it: <code class="docutils literal notranslate"><span class="pre">`python</span> <span class="pre">python3</span> <span class="pre">minimalscene.py`</span></code></p>
+<ul class="simple">
+<li>Access to Sofa simulation within the MathLab python interpreter [WIP-POC].</li>
+<li>Make a full python GUI application (with UI framework like PySide2, pygame) and render an integrated sofa scene in an opengl context [POC]</li>
+</ul>
+</div>
+</div>
+<div class="section" id="global-diagram-of-sofapython3">
+<h2>Global diagram of SofaPython3<a class="headerlink" href="#global-diagram-of-sofapython3" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<img alt="How SP3 fits in the SOFA usage pipeline" src="_images/SP3_global_arch.png" />
+</div>
+</div>
+<div class="section" id="content">
+<h2>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="menu/install.html">Download and Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/SofaPlugin.html">Using the plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/SofaModule.html">The modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/pythonLibraries.html">Additionnal libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/CustomModule.html">Writing custom binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/Contributing.html">Contributing</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="contributors">
+<h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Damien Marchal, Research Engineer CNRS</li>
+<li>Bruno Marques, Research Engineer Inria</li>
+<li>Eve Le Guillou, Enginnering Student</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="menu/install.html" class="btn btn-neutral float-right" title="Download and Install" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, damien.marchal@univ-lille.fr.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
